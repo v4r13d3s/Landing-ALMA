@@ -1,93 +1,189 @@
 ---
-// Footer Component - Site footer with navigation and info
+// Footer.astro - Versión Premium Refinada
+import logo from '../assets/Logo.png'; 
+import { Image } from 'astro:assets';
 ---
 
-<footer class="bg-gray-50 border-t border-gray-200">
-  <div class="max-w-7xl mx-auto px-6 py-12">
-    
-    <!-- Main Footer Content -->
-    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+<footer class="footer-container">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
       
-      <!-- Company Info -->
-      <div class="lg:col-span-2">
-        <div class="flex items-center gap-2 mb-4">
-          <div class="w-10 h-10 bg-teal-500 rounded-xl flex items-center justify-center">
-            <span class="text-white font-bold text-xl">A</span>
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-4 mb-6 group">
+          <div class="logo-wrapper">
+            <Image 
+              src={logo} 
+              alt="Logo ALMA" 
+              class="w-full h-full object-contain scale-110" 
+            />
           </div>
-          <span class="text-2xl font-bold text-gray-900">ALMA</span>
+          <span class="text-3xl font-extrabold tracking-tighter text-white">ALMA</span>
         </div>
-        <p class="text-gray-600 mb-4 max-w-sm">
-          Empowering educators with AI-driven tools to create inclusive, personalized learning experiences for every student.
+        <p class="text-slate-400 mb-8 text-sm leading-relaxed max-w-[250px]">
+          Transformando el aprendizaje en juego para niños con Síndrome de Down. Juntos creamos un futuro más brillante.
         </p>
         
-        <!-- Social Links -->
-        <div class="flex gap-3">
-          <a href="#" class="w-10 h-10 bg-gray-200 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors group">
-            <svg class="w-5 h-5 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
+        <div class="flex gap-4">
+          <a href="#" class="social-icon" aria-label="Facebook">
+            <i class="fa fa-facebook"></i>
           </a>
-          <a href="#" class="w-10 h-10 bg-gray-200 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors group">
-            <svg class="w-5 h-5 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-            </svg>
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <i class="fa fa-instagram"></i>
           </a>
-          <a href="#" class="w-10 h-10 bg-gray-200 hover:bg-teal-500 rounded-lg flex items-center justify-center transition-colors group">
-            <svg class="w-5 h-5 text-gray-600 group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <i class="fa fa-linkedin"></i>
           </a>
         </div>
       </div>
-      
-      <!-- Product Links -->
+
       <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Product</h3>
-        <ul class="space-y-3">
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Features</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Pricing</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Security</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Roadmap</a></li>
+        <h4 class="footer-title">Producto</h4>
+        <ul class="footer-links">
+          <li><a href="#">Actividades</a></li>
+          <li><a href="#">Metodología</a></li>
+          <li><a href="#">Seguridad</a></li>
         </ul>
       </div>
-      
-      <!-- Company Links -->
+
       <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Company</h3>
-        <ul class="space-y-3">
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">About Us</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Careers</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Blog</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Contact</a></li>
+        <h4 class="footer-title">Comunidad</h4>
+        <ul class="footer-links">
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Blog para padres</a></li>
+          <li><a href="#">Contacto</a></li>
         </ul>
       </div>
-      
-      <!-- Resources Links -->
+
       <div>
-        <h3 class="font-semibold text-gray-900 mb-4">Resources</h3>
-        <ul class="space-y-3">
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Documentation</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Help Center</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Community</a></li>
-          <li><a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Tutorials</a></li>
+        <h4 class="footer-title">Recursos</h4>
+        <ul class="footer-links">
+          <li><a href="#">Guía de inicio</a></li>
+          <li><a href="#">Centro de ayuda</a></li>
+          <li><a href="#">Términos y Privacidad</a></li>
         </ul>
-      </div>
-      
-    </div>
-    
-    <!-- Bottom Bar -->
-    <div class="pt-8 border-t border-gray-200">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="text-sm text-gray-600">
-          © 2026 ALMA Education. All rights reserved.
-        </p>
-        <div class="flex gap-6 text-sm">
-          <a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Privacy Policy</a>
-          <a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Terms of Service</a>
-          <a href="#" class="text-gray-600 hover:text-teal-600 transition-colors">Cookie Policy</a>
-        </div>
       </div>
     </div>
-    
+
+    <div class="copyright-bar">
+      <p>© 2026 ALMA Education. Creado con <span class="heart-icon">❤️</span> para familias extraordinarias.</p>
+    </div>
   </div>
 </footer>
+
+<style>
+  .footer-container {
+    background-color: #0d1b2a;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    margin-top: -60px; /* Overlap sutil con la sección anterior */
+    position: relative;
+    z-index: 20;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  /* Estilo del Logo */
+  .logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    padding: 5px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  .group:hover .logo-wrapper {
+    transform: rotate(-5deg) scale(1.05);
+  }
+
+  /* Títulos de sección */
+  .footer-title {
+    color: #fbbf24; /* Amarillo vibrante consistente */
+    font-weight: 800;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Enlaces */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 1rem;
+  }
+
+  .footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: white;
+    padding-left: 5px; /* Micro-interacción al hover */
+  }
+
+  /* Social Icons */
+  .social-icon {
+    width: 42px;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white !important;
+    font-size: 1.1rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .social-icon:hover {
+    background: #2b6cb0;
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 20px rgba(43, 108, 176, 0.3);
+  }
+
+  /* Copyright Bar */
+  .copyright-bar {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #64748b;
+    font-size: 0.8rem;
+  }
+
+  .heart-icon {
+    display: inline-block;
+    color: #ef4444;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      padding-top: 80px;
+      text-align: center;
+    }
+    .footer-links a:hover { padding-left: 0; }
+    .flex { justify-content: center; }
+  }
+</style>

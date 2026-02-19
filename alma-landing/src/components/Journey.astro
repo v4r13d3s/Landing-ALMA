@@ -1,63 +1,225 @@
----
-// Journey Component - Dark CTA section
----
+<section id="journey" class="journey-section">
+  <div class="bg-pattern"></div>
 
-<section class="px-6 py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
-  <div class="max-w-5xl mx-auto text-center">
-    
-    <!-- Header -->
-    <h2 class="text-3xl lg:text-5xl font-bold mb-6 leading-tight">
-      Your journey, anywhere.
-    </h2>
-    
-    <p class="text-lg lg:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-      Access ALMA on any device, anytime, anywhere. Start creating inclusive learning experiences with our mobile and desktop apps.
-    </p>
-    
-    <!-- CTA Buttons -->
-    <div class="flex flex-wrap justify-center gap-4 mb-8">
-      <button class="bg-white text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-3">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
-        </svg>
-        App Store
-      </button>
-      
-      <button class="bg-white text-gray-900 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-3">
-        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626c.591.342.591 1.19 0 1.533l-2.807 1.626L16.5 12l1.198-1.491zM3.334 2.572L14.27 8.905 11.97 11.21 3.334 2.572z"/>
-        </svg>
-        Google Play
-      </button>
-      
-      <button class="border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300 inline-flex items-center gap-3">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        Web Version
-      </button>
+  <div class="main-container">
+    <div class="header-content">
+      <h2>Tu camino con <span class="blue">ALMA</span></h2>
+      <p>Pasos sencillos diseñados para disfrutar el aprendizaje en familia.</p>
     </div>
-    
-    <!-- Additional Info -->
-    <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-400 pt-8 border-t border-gray-700">
-      <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span>Free 14-day trial</span>
+
+    <div class="map-wrapper">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+
+      <div class="step-box p1">
+        <div class="witty-card border-yellow">
+          <div class="card-inner">
+            <div class="num-tag yellow-bg">1</div>
+            <h3>Perfil Personalizado</h3>
+            <p>Entendemos las necesidades únicas de tu pequeño para cada juego.</p>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span>No credit card required</span>
+
+      <div class="step-box p2">
+        <div class="witty-card border-blue">
+          <div class="card-inner">
+            <div class="num-tag blue-bg">2</div>
+            <h3>Actividades Diarias</h3>
+            <p>Biblioteca de juegos basados en estimulación cognitiva y motriz.</p>
+          </div>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-        </svg>
-        <span>Cancel anytime</span>
+
+      <div class="step-box p3">
+        <div class="witty-card border-yellow">
+          <div class="card-inner">
+            <div class="num-tag yellow-bg">3</div>
+            <h3>Logros Compartidos</h3>
+            <p>Visualiza el progreso real y celebra cada hito en familia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="download-center">
+        <h4>Comienza la aventura hoy</h4>
+        <div class="app-grid">
+          <a href="#" class="app-link dark-btn">
+             <i class="fa fa-apple"></i> App Store
+          </a>
+          <a href="#" class="app-link dark-btn">
+             <i class="fa fa-play"></i> Google Play
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .journey-section {
+    position: relative;
+    padding: 120px 20px;
+    background-color: #f0f7ff;
+    overflow: hidden;
+    min-height: 950px;
+    font-family: 'Fredoka', sans-serif;
+  }
+
+  /* Patrón de puntos optimizado */
+  .bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#2b6cb0 0.8px, transparent 0.8px);
+    background-size: 40px 40px;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .header-content { text-align: center; margin-bottom: 70px; }
+  .badge { 
+    background: #fff; 
+    border: 1.5px solid #e2e8f0; 
+    padding: 6px 18px; 
+    border-radius: 20px; 
+    font-size: 0.85rem; 
+    font-weight: 700;
+    color: #4a5568;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  }
+  
+  .header-content h2 { font-size: 3.2rem; color: #1a365d; margin: 20px 0; font-weight: 800; }
+  .blue { color: #2b6cb0; }
+  .header-content p { color: #0e1217; font-size: 1.2rem; }
+
+  /* Estructura del Mapa */
+  .map-wrapper {
+    position: relative;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Círculos de órbita con grosor coherente */
+  .orbit {
+    position: absolute;
+    border: 3px solid #5b7593; /* Grosor aumentado */
+    border-radius: 50%;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    transition: border-color 0.3s ease;
+  }
+  .orbit-1 { width: 380px; height: 380px; }
+  .orbit-2 { width: 600px; height: 600px; }
+  .orbit-3 { width: 850px; height: 850px; }
+
+  /* Tarjetas Elevadas */
+  .step-box {
+    position: absolute;
+    width: 300px;
+    z-index: 10;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .p1 { top: 2%; right: 2%; }
+  .p2 { top: 35%; left: -2%; }
+  .p3 { bottom: 5%; right: 2%; }
+
+  .witty-card {
+    background: white;
+    padding: 30px;
+    border-radius: 30px; /* Redondeo unificado */
+    box-shadow: 0 20px 40px rgba(43, 108, 176, 0.12); /* Sombra azulada */
+    border-bottom: 6px solid transparent; /* Efecto de profundidad */
+    transition: all 0.3s ease;
+  }
+
+  .border-yellow { border: 3px solid #fbbf24; border-bottom: 8px solid #fbbf24; }
+  .border-blue { border: 3px solid #3b82f6; border-bottom: 8px solid #3b82f6; }
+
+  /* Interacción Hover */
+  .step-box:hover {
+    transform: translateY(-10px) scale(1.02);
+  }
+  
+  .step-box:hover .witty-card {
+    box-shadow: 0 30px 50px rgba(43, 108, 176, 0.2);
+  }
+
+  .num-tag {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 900; margin-bottom: 20px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+  .yellow-bg { background: #fbbf24; }
+  .blue-bg { background: #3b82f6; }
+
+  .card-inner h3 { font-size: 1.4rem; margin-bottom: 10px; color: #1a365d; font-weight: 800; }
+  .card-inner p { font-size: 1rem; color: #000000; line-height: 1.5; }
+
+  /* Caja Central de Descarga */
+  .download-center {
+    background: white;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: 0 25px 60px rgba(43, 108, 176, 0.15);
+    text-align: center;
+    width: 320px;
+    z-index: 20;
+    border: 2px solid #253b52;
+  }
+
+  .download-center h4 { 
+    margin-bottom: 25px; 
+    color: #022c66; 
+    font-weight: 800; 
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .app-grid { display: flex; flex-direction: column; gap: 15px; }
+
+  .dark-btn {
+    background: #0f172a; 
+    color: white; 
+    padding: 14px;
+    border-radius: 16px; 
+    text-decoration: none; 
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .dark-btn:hover {
+    background: #1e293b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  }
+
+  .footer-note { margin-top: 15px; color: #323b48; font-size: 0.85rem; font-weight: 600; }
+
+  /* Responsivo */
+  @media (max-width: 900px) {
+    .journey-section { padding: 60px 20px; }
+    .map-wrapper { height: auto; flex-direction: column; gap: 30px; }
+    .orbit, .bg-pattern { display: none; }
+    .step-box { position: relative; inset: auto; width: 100%; max-width: 400px; }
+    .header-content h2 { font-size: 2.4rem; }
+  }
+</style>
