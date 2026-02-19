@@ -1,29 +1,48 @@
 ---
 // Hero Component - Main landing section
+import phoneMockup from '../assets/Mockup-movil.png';
+import appStoreButton from '../assets/macos.png';
+import googlePlayButton from '../assets/playstore.png';
 ---
 
-<section class="relative bg-gradient-to-br from-orange-50 via-white to-teal-50 px-6 py-16 lg:py-24">
-  <div class="max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+<section class="relative bg-gradient-to-br from-orange-50 via-white to-teal-50 px-6 py-8">
+  <div class="max-w-7xl lg:max-w-6xl 2xl:max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-4 xl:gap-6 2xl:gap-12 items-center">
       
       <!-- Left Content -->
-      <div class="space-y-6">
-        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-          Empowering Tutors,<br />
-          <span class="text-teal-600">Inspiring Growth</span>
+      <div class="space-y-4 2xl:space-y-6">
+        <h1 class="text-3xl lg:text-4xl 2xl:text-6xl font-bold text-gray-900 leading-tight">
+          Educar mejor<br />
+          <span class="text-teal-600">con ALMA</span>
         </h1>
         
-        <p class="text-lg text-gray-600 max-w-lg">
-          The first AI platform designed to bridge the gap in inclusive education, helping tutors create personalized learning experiences.
+        <p class="text-base lg:text-base 2xl:text-lg text-gray-600 max-w-lg">
+          La primera plataforma diseñada especialmente para tutores y padres de niños con síndrome de Down. Accede a guías validadas, estrategias prácticas y un sistema de seguimiento personalizado para potenciar el desarrollo de tus niños.
         </p>
+
+        <h2 class="text-xl lg:text-2xl 2xl:text-4xl font-bold text-gray-900 leading-tight">
+          Descarga ALMA y comienza a potenciar el desarrollo de tus niños
+        </h2>
         
+        <!-- Download Buttons -->
         <div class="flex flex-wrap gap-4">
-          <button class="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
-            Get Started
-          </button>
-          <button class="border-2 border-gray-300 hover:border-teal-500 text-gray-700 font-semibold px-8 py-3 rounded-full transition-all duration-300">
-            How it Works
-          </button>
+          <!-- App Store Button -->
+          <a href="#" class="inline-flex items-center bg-black hover:bg-gray-800 text-white px-4 py-2 2xl:px-6 2xl:py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+            <img src={appStoreButton.src} alt="App Store" class="w-6 h-6 2xl:w-8 2xl:h-8 mr-2 2xl:mr-3" />
+            <div class="text-left">
+              <div class="text-[10px] 2xl:text-xs">Download on the</div>
+              <div class="text-base 2xl:text-xl font-semibold -mt-1">App Store</div>
+            </div>
+          </a>
+          
+          <!-- Google Play Button -->
+          <a href="#" class="inline-flex items-center bg-black hover:bg-gray-800 text-white px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+            <img src={googlePlayButton.src} alt="Google Play" class="w-6 h-6 2xl:w-8 2xl:h-8 mr-2 2xl:mr-3" />
+            <div class="text-left">
+              <div class="text-[10px] 2xl:text-xs">GET IT ON</div>
+              <div class="text-base 2xl:text-xl font-semibold -mt-1">Google Play</div>
+            </div>
+          </a>
         </div>
         
         <!-- Stats Row -->
@@ -34,28 +53,21 @@
               <img src="https://i.pravatar.cc/40?img=2" alt="User" class="w-8 h-8 rounded-full border-2 border-white" />
               <img src="https://i.pravatar.cc/40?img=3" alt="User" class="w-8 h-8 rounded-full border-2 border-white" />
             </div>
-            <span class="text-sm text-gray-600 font-medium">2,000+ Active Tutors</span>
+            <span class="text-sm text-gray-600 font-medium">+100 tutores activos</span>
           </div>
         </div>
       </div>
       
-      <!-- Right Image -->
-      <div class="relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-          <img 
-            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=600&fit=crop" 
-            alt="Tutor and student" 
-            class="w-full h-auto object-cover"
-          />
-          <!-- Overlay badge -->
-          <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-            <p class="text-sm text-gray-700">
-              "ALMA has transformed how I teach students with different learning needs."
-            </p>
-          </div>
-        </div>
+      <!-- Right Image - Phone Mockup -->
+      <div class="relative flex items-center justify-center">
+        <!-- Phone Image -->
+        <img 
+          src={phoneMockup.src} 
+          alt="ALMA App on phone" 
+          class="w-full max-w-[250px] h-auto drop-shadow-2xl transform hover:scale-105 transition-transform duration-200"
+        />
         
-        <!-- Decorative element -->
+        <!-- Decorative elements -->
         <div class="absolute -top-4 -right-4 w-24 h-24 bg-teal-400 rounded-full opacity-20 blur-2xl"></div>
         <div class="absolute -bottom-4 -left-4 w-32 h-32 bg-orange-400 rounded-full opacity-20 blur-2xl"></div>
       </div>
