@@ -1,6 +1,7 @@
 ---
 // Aquí va código JavaScript/TypeScript
 import '../styles/global.css';
+import logoSrc from '../assets/logo.png';
 
 const { title } = Astro.props;
 ---
@@ -16,8 +17,44 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<!-- Loading Logo Overlay -->
+		<div id="loading-overlay">
+			<div class="logo-wrapper">
+				<!-- Elementos flotantes contextuales -->
+				<span class="floating-icon icon-1">💚</span>
+				<span class="floating-icon icon-2">⭐</span>
+				<span class="floating-icon icon-3">🧩</span>
+				<span class="floating-icon icon-4">📖</span>
+				<span class="floating-icon icon-5">🌟</span>
+				<span class="floating-icon icon-6">💙</span>
+
+				<div class="logo-container">
+					<img src={logoSrc.src} alt="ALMA Logo" class="loading-logo" />
+				</div>
+			</div>
+			<p class="loading-text">Cargando...</p>
+		</div>
+
 		<!-- slot es donde se insertará el contenido -->
 		<slot />
+
+		<script>
+			const overlay = document.getElementById('loading-overlay');
+			const minDelay = new Promise(resolve => setTimeout(resolve, 3000));
+			const pageLoad = new Promise(resolve => {
+				if (document.readyState === 'complete') resolve();
+				else window.addEventListener('load', resolve);
+			});
+
+			Promise.all([minDelay, pageLoad]).then(() => {
+				if (overlay) {
+					overlay.classList.add('fade-out');
+					overlay.addEventListener('transitionend', () => {
+						overlay.remove();
+					});
+				}
+			});
+		</script>
 	</body>
 </html>
 
@@ -27,5 +64,150 @@ const { title } = Astro.props;
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+
+	#loading-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #ffffff;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		z-index: 99999;
+		transition: opacity 0.5s ease;
+	}
+
+	#loading-overlay.fade-out {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.logo-wrapper {
+		position: relative;
+		width: 280px;
+		height: 280px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.floating-icon {
+		position: absolute;
+		font-size: 24px;
+		opacity: 0;
+		animation: float-in 1.2s ease-out forwards, orbit 4s ease-in-out infinite;
+	}
+
+	/* Posiciones y delays para cada ícono */
+	.icon-1 { top: 10px; left: 50%; animation-delay: 1s, 1s; }
+	.icon-2 { top: 30%; right: 5px; animation-delay: 1.4s, 1.4s; }
+	.icon-3 { bottom: 30%; right: 10px; animation-delay: 1.8s, 1.8s; }
+	.icon-4 { bottom: 10px; left: 50%; animation-delay: 2.2s, 2.2s; }
+	.icon-5 { bottom: 30%; left: 5px; animation-delay: 2.5s, 2.5s; }
+	.icon-6 { top: 30%; left: 10px; animation-delay: 2.8s, 2.8s; }
+
+	@keyframes float-in {
+		0% {
+			opacity: 0;
+			transform: scale(0) translateY(20px);
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1) translateY(0);
+		}
+	}
+
+	@keyframes orbit {
+		0% { transform: translateY(0px); }
+		50% { transform: translateY(-8px); }
+		100% { transform: translateY(0px); }
+	}
+
+	.logo-container {
+		width: 200px;
+		height: 200px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		animation: reveal 2s ease-out forwards;
+	}
+
+	.loading-logo {
+		width: 200px;
+		height: 200px;
+		object-fit: contain;
+		animation: logo-appear 2s ease-out forwards, heartbeat 1.4s ease-in-out 2s infinite;
+	}
+
+	/* El logo aparece desde pequeño/borroso hasta su tamaño real */
+	@keyframes logo-appear {
+		0% {
+			transform: scale(0.3) rotate(-10deg);
+			filter: blur(12px);
+			opacity: 0;
+		}
+		40% {
+			transform: scale(1.1) rotate(2deg);
+			filter: blur(2px);
+			opacity: 0.8;
+		}
+		60% {
+			transform: scale(0.95) rotate(-1deg);
+			filter: blur(0px);
+			opacity: 1;
+		}
+		80% {
+			transform: scale(1.03);
+			filter: blur(0px);
+			opacity: 1;
+		}
+		100% {
+			transform: scale(1) rotate(0deg);
+			filter: blur(0px);
+			opacity: 1;
+		}
+	}
+
+	/* Clip-path circular que revela el contenedor */
+	@keyframes reveal {
+		0% {
+			clip-path: circle(0% at 50% 50%);
+		}
+		70% {
+			clip-path: circle(55% at 50% 50%);
+		}
+		100% {
+			clip-path: circle(100% at 50% 50%);
+		}
+	}
+
+	/* Latido después de revelarse */
+	@keyframes heartbeat {
+		0% { transform: scale(1); }
+		14% { transform: scale(1.1); }
+		28% { transform: scale(1); }
+		42% { transform: scale(1.1); }
+		56% { transform: scale(1); }
+		100% { transform: scale(1); }
+	}
+
+	.loading-text {
+		font-family: 'Inter', 'Segoe UI', sans-serif;
+		font-size: 14px;
+		color: #94a3b8;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		animation: text-fade 1.5s ease-in-out infinite alternate;
+		margin: 0;
+	}
+
+	@keyframes text-fade {
+		0% { opacity: 0.4; }
+		100% { opacity: 1; }
 	}
 </style>
